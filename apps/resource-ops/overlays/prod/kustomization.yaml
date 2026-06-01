@@ -4,14 +4,15 @@ kind: Kustomization
 namespace: resource-ops-prod
 
 resources:
-  - namespace.yaml
-  - ../../base
+- namespace.yaml
+- ../../base
 
 patches:
-  - path: patch-replicas.yaml
-  - path: patch-configmap.yaml
-  - path: patch-external-secret.yaml
+- path: patch-replicas.yaml
+- path: patch-configmap.yaml
+- path: patch-external-secret.yaml
 
 images:
-  - name: team2-backend
-    newTag: prod-latest
+- name: team2-backend
+  newName: 495599735720.dkr.ecr.ap-northeast-2.amazonaws.com/team2-backend
+  newTag: sha-e8abced
