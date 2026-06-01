@@ -15,4 +15,4 @@ patches:
 images:
 - name: team2-backend
   newName: 495599735720.dkr.ecr.ap-northeast-2.amazonaws.com/team2-backend
-  newTag: sha-ab10cc3
+  newTag: sha-fbae1c8
