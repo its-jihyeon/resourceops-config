@@ -19,3 +19,5 @@ apps/
 
 argocd/
 infra/
+monitoring/
+ └── values.yaml

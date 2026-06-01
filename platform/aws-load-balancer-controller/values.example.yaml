@@ -1,0 +1,7 @@
+# Apply after installing the Gateway API and LBC Gateway CRDs.
+clusterName: team2-project-cluster
+serviceAccount:
+  create: true
+  name: aws-load-balancer-controller
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::495599735720:role/team2-project-cluster-alb-controller

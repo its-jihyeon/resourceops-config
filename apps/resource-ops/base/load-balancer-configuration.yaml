@@ -1,0 +1,8 @@
+apiVersion: gateway.k8s.aws/v1beta1
+kind: LoadBalancerConfiguration
+metadata:
+  name: resource-app-alb-config
+spec:
+  scheme: internet-facing
+  defaultTargetGroupConfiguration:
+    name: resource-app-target-defaults

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: resource-app-config
+data:
+  SERVER_PORT: "8080"
+  SPRING_PROFILES_ACTIVE: default
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"

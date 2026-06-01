@@ -1,0 +1,13 @@
+apiVersion: gateway.k8s.aws/v1beta1
+kind: TargetGroupConfiguration
+metadata:
+  name: resource-app-target-defaults
+spec:
+  defaultConfiguration:
+    targetType: ip
+    healthCheckConfig:
+      healthCheckPath: /actuator/health/readiness
+      healthCheckPort: "8080"
+      healthCheckProtocol: HTTP
+      matcher:
+        httpCode: "200"

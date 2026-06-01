@@ -1,0 +1,6 @@
+# Apply this configuration when installing External Secrets Operator.
+serviceAccount:
+  create: true
+  name: external-secrets-sa
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::495599735720:role/team2-project-cluster-eso

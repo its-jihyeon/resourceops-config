@@ -1,0 +1,30 @@
+# [Monitoring Settings for team2-config]
+# 이 파일은 ArgoCD를 통해 EKS 클러스텅 ㅔ배포될 Prometheus & Grafana 설정
+# 팀원들의 애플리케이션 매트릭을 수집하기 위한 기본 환경을 정의 합니다
+
+
+# [1] Grafana (대시보드 설정)
+grafana:
+  adminPassword: "admin"
+  defaultDashboardsTimezone: Asia/Seoul
+  service:
+    type: ClusterIP
+
+# [2] Prometheus (메트릭 수집기 설정)
+prometheus:
+  prometheusSpec:
+    retention: 15d
+    # [핵심] 다른 네임스페이스의 ServiceMonitor 자동 인식을 위한 설정
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    resources:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+
+# [3] 추가 컴포넌트
+alertmanager:
+  enabled: true
+
+kubeStateMetrics:
+  enabled: true

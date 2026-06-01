@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: resource-ops-dev
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/CLD-05/team2-config.git
+    targetRevision: HEAD
+    path: apps/resource-ops/overlays/dev
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: resource-ops-dev
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
